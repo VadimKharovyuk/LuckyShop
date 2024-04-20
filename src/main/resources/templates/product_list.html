@@ -6,56 +6,93 @@
     <!-- Подключение файла стилей -->
 <!--    <link rel="stylesheet" href="/css/styles.css">-->
     <style>
+        /* Основной файл стилей */
+        /* Стили для навигации */
+        .navMain {
+            background-color: #333; /* Темный фон для навигации */
+            padding: 10px; /* Внутренний отступ */
+        }
+
+        .navMain ul {
+            list-style-type: none; /* Убираем маркеры списка */
+            margin: 0;
+            padding: 0;
+            display: flex; /* Горизонтальное расположение элементов */
+            justify-content: space-around; /* Равномерное распределение элементов */
+        }
+
+        .navMain a.nav-link {
+            color: white; /* Белый цвет текста */
+            text-decoration: none; /* Убираем подчеркивание ссылок */
+            font-weight: bold; /* Жирный шрифт */
+            transition: color 0.3s; /* Плавный переход при наведении */
+        }
+
+        .navMain a.nav-link:hover {
+            color: #ffcc00; /* Цвет при наведении */
+        }
+
+        /* Стили для страницы со списком продуктов */
         body {
-            font-family: Arial, sans-serif;
+            font-family: Arial, sans-serif; /* Основной шрифт для страницы */
         }
 
         h1 {
-            color: #333;
+            color: #333; /* Цвет заголовка */
+            text-align: center; /* Центрирование заголовка */
         }
 
         table {
-            width: 100%;
-            border-collapse: collapse;
+            width: 100%; /* Таблица занимает всю ширину страницы */
+            border-collapse: collapse; /* Убираем промежутки между ячейками */
         }
 
         th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
+            border: 1px solid #ddd; /* Добавляем границы к ячейкам */
+            padding: 8px; /* Отступы внутри ячеек */
         }
 
         th {
-            background-color: #f2f2f2;
-            text-align: left;
+            background-color: #f2f2f2; /* Цвет фона заголовков таблицы */
+            text-align: left; /* Выравнивание текста в заголовках таблицы */
         }
 
         tr:hover {
-            background-color: #f5f5f5;
+            background-color: #f5f5f5; /* Цвет при наведении на строку */
         }
 
         a {
-            color: #0066cc;
-            text-decoration: none;
+            color: #0066cc; /* Цвет для ссылок */
+            text-decoration: none; /* Убираем подчеркивание ссылок */
         }
 
         a:hover {
-            text-decoration: underline;
+            text-decoration: underline; /* Подчеркивание при наведении на ссылку */
         }
 
         button {
-            background-color: #f44336;
-            color: white;
-            border: none;
-            padding: 8px 12px;
-            cursor: pointer;
+            background-color: #f44336; /* Красный фон для кнопки */
+            color: white; /* Белый цвет текста */
+            border: none; /* Без границ */
+            padding: 8px 12px; /* Размеры кнопки */
+            cursor: pointer; /* Указатель при наведении */
         }
 
         button:hover {
-            background-color: #d32f2f;
+            background-color: #d32f2f; /* Темный красный при наведении */
         }
+
 
     </style>
 </head>
+<nav class="navMain"> <!-- Секция навигации -->
+    <ul>
+        <li><a href="/" class="nav-link">Главная</a></li> <!-- Ссылка на главную страницу -->
+        <li><a href="/products" class="nav-link">Продукты</a></li> <!-- Ссылка на список продуктов -->
+        <li><a href="/about" class="nav-link">О нас</a></li> <!-- Ссылка на страницу "О нас" -->
+        <li><a href="/contact" class="nav-link">Контакты</a></li> <!-- Ссылка на контакты -->
+    </ul>
+</nav>
 <body>
 <h1>Product List</h1>
 <a href="/products/new">Add  new Product</a>
@@ -78,7 +115,7 @@
         <td th:text="${product.price}"></td>
         <td>
             <a th:href="@{/products/{id}(id=${product.id})}">О товаре </a>
-            <a th:href="@{/products/edit/{id}(id=${product.id})}">Edit</a>
+            <a th:href="@{/products/edit/{id}(id=${product.id})}">Редактировать</a>
             <form th:action="@{/products/delete/{id}(id=${product.id})}" method="post" style="display:inline;">
                 <button type="submit">Удалить продукт</button>
             </form>

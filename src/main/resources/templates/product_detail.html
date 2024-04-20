@@ -4,36 +4,107 @@
     <meta charset="UTF-8">
     <title>Product Details</title>
     <!-- Подключение файла стилей -->
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css"> <!-- Внешний файл стилей -->
+    <style>
+        /* Основные стили для навигации */
+        .navMain {
+            background-color: #333; /* Темный фон */
+            padding: 10px;
+        }
+
+        .navMain ul {
+            list-style: none; /* Убираем маркеры */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-around; /* Равномерное распределение элементов */
+        }
+
+        .navMain a {
+            color: white;
+            text-decoration: none; /* Убираем подчеркивания */
+            font-weight: bold; /* Жирный шрифт */
+            transition: color 0.3s; /* Плавный переход при наведении */
+        }
+
+        .navMain a:hover {
+            color: #ffcc00; /* Цвет при наведении */
+        }
+
+        /* Стили для основной страницы */
+        h1 {
+            text-align: center; /* Центрирование заголовка */
+            font-size: 24px; /* Размер шрифта заголовка */
+        }
+
+        .product-details {
+            max-width: 600px; /* Ограничение ширины */
+            margin: 20px auto; /* Центрирование и внешний отступ */
+            padding: 10px;
+            border: 1px solid #ddd; /* Граница для отделения */
+            border-radius: 5px; /* Скругленные углы */
+            background-color: #f9f9f9; /* Светлый фон */
+        }
+
+        .product-details label {
+            font-weight: bold; /* Жирный шрифт для меток */
+        }
+
+        .product-details div {
+            margin-bottom: 10px; /* Отступ между элементами */
+        }
+
+        /* Стили для ссылок */
+        .product-details a {
+            color: #007bff; /* Синий цвет */
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .product-details a:hover {
+            color: #0056b3; /* Более темный синий при наведении */
+        }
+
+    </style>
 </head>
 <body>
+<nav class="navMain"> <!-- Секция навигации -->
+    <ul>
+        <li><a href="/" class="nav-link">Главная</a></li>
+        <li><a href="/products" class="nav-link">Продукты</a></li>
+        <li><a href="/about" class="nav-link">О нас</a></li>
+        <li><a href="/contact" class="nav-link">Контакты</a></li>
+    </ul>
+</nav>
+
 <h1>Product Details</h1>
 
-<!-- Отображение информации о продукте -->
-<div>
-    <label>Product ID:</label>
-    <span th:text="${product.id}"></span>
-</div>
+<div class="product-details"> <!-- Секция деталей продукта -->
+    <div>
+        <label>Product ID:</label>
+        <span th:text="${product.id}"></span>
+    </div>
 
-<div>
-    <label>Product Name:</label>
-    <span th:text="${product.name}"></span>
-</div>
+    <div>
+        <label>Product Name:</label>
+        <span th:text="${product.name}"></span>
+    </div>
 
-<div>
-    <label>Description:</label>
-    <span th:text="${product.description}"></span>
-</div>
+    <div>
+        <label>Description:</label>
+        <span th:text="${product.description}"></span>
+    </div>
 
-<div>
-    <label>Price:</label>
-    <span th:text="${product.price}"></span>
-</div>
+    <div>
+        <label>Price:</label>
+        <span th:text="${product.price}"></span>
+    </div>
 
-<!-- Ссылки для редактирования и возвращения к списку -->
-<div>
-    <a th:href="@{/products/edit/{id}(id=${product.id})}">Edit Product</a>
-    <a th:href="@{/products}">Back to Product List</a>
+    <!-- Ссылки для редактирования и возвращения к списку -->
+    <div>
+        <a th:href="@{/products/edit/{id}(id=${product.id})}">Edit Product</a>
+        <a th:href="@{/products}">Back to Product List</a>
+    </div>
 </div>
 </body>
 </html>

@@ -5,7 +5,88 @@
     <title>New Product Form</title>
     <!-- Подключение файла стилей -->
     <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        /* Основной файл стилей */
+        /* Стили для навигации */
+        .navMain {
+            background-color: #333; /* Темный фон для навигации */
+            padding: 10px; /* Внутренний отступ */
+        }
+
+        .navMain ul {
+            list-style-type: none; /* Убираем маркеры списка */
+            margin: 0;
+            padding: 0;
+            display: flex; /* Горизонтальное расположение элементов */
+            justify-content: space-around; /* Равномерное распределение элементов */
+        }
+
+        .navMain a.nav-link {
+            color: white; /* Белый цвет текста */
+            text-decoration: none; /* Убираем подчеркивание ссылок */
+            font-weight: bold; /* Жирный шрифт */
+            transition: color 0.3s; /* Плавный переход при наведении */
+        }
+
+        .navMain a.nav-link:hover {
+            color: #ffcc00; /* Цвет при наведении */
+        }
+
+        /* Стили для основной части страницы */
+        h1 {
+            text-align: center; /* Центрирование заголовка */
+            font-size: 24px; /* Размер шрифта */
+        }
+
+        form {
+            max-width: 600px; /* Ограничение ширины формы */
+            margin: 20px auto; /* Центрирование формы и отступы */
+            padding: 10px;
+            border: 1px solid #ddd; /* Легкая рамка */
+            border-radius: 5px; /* Скругленные углы */
+            background-color: #f9f9f9; /* Светлый фон */
+        }
+
+        form div {
+            margin-bottom: 10px; /* Отступ между элементами формы */
+        }
+
+        form label {
+            font-weight: bold; /* Жирный шрифт меток */
+        }
+
+        form input, form textarea {
+            width: 100%; /* Поля занимают всю ширину формы */
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px; /* Скругленные углы для полей ввода */
+        }
+
+        form button {
+            padding: 10px 20px; /* Размеры кнопки */
+            background-color: #28a745; /* Зеленый фон для кнопки */
+            color: white; /* Белый цвет текста */
+            border: none;
+            border-radius: 5px;
+            font-weight: bold; /* Жирный шрифт */
+            transition: background-color 0.3s; /* Плавный переход при наведении */
+        }
+
+        form button:hover {
+            background-color: #218838; /* Темный зеленый при наведении */
+        }
+
+
+    </style>
 </head>
+<nav class="navMain"> <!-- Секция навигации -->
+    <ul>
+        <li><a href="/" class="nav-link">Главная</a></li> <!-- Ссылка на главную страницу -->
+        <li><a href="/products" class="nav-link">Продукты</a></li> <!-- Ссылка на список продуктов -->
+        <li><a href="/about" class="nav-link">О нас</a></li> <!-- Ссылка на страницу "О нас" -->
+        <li><a href="/contact" class="nav-link">Контакты</a></li> <!-- Ссылка на контакты -->
+    </ul>
+</nav>
 <body>
 <h1>Create a New Product</h1>
 

@@ -2,6 +2,7 @@ package com.example.luckyshop.controller;
 
 import com.example.luckyshop.model.Customer;
 import com.example.luckyshop.service.CustomerService;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,14 +12,11 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/customers")
+@AllArgsConstructor
 public class CustomerController {
 
     private final CustomerService customerService;
 
-    @Autowired
-    public CustomerController(CustomerService customerService) {
-        this.customerService = customerService;
-    }
 
     // Получить всех клиентов
     @GetMapping
@@ -69,4 +67,5 @@ public class CustomerController {
             return ResponseEntity.notFound().build();
         }
     }
+
 }

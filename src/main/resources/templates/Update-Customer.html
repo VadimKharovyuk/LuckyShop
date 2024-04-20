@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Customer</title>
+</head>
+<body>
+<header>
+    <h1>Update Customer Information</h1>
+</header>
+
+<main>
+    <form action="/customers/{id}" method="put"> <!-- Здесь будет нужный ID -->
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName">
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+
+        <button type="submit">Update Customer</button>
+    </form>
+
+    <a href="/">Back to Main Page</a>
+</main>
+
+<footer>
+    <p>&copy; 2024 Lucky Shop</p>
+</footer>
+</body>
+</html>

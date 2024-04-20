@@ -2,8 +2,52 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Ошибка</title>
-    <link rel="stylesheet" type="text/css" href="/static/css/style.css" /> <!-- Подключение стилей -->
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+    <style>
+
+        /* Стили для навигации */
+        /* Основной файл стилей */
+
+        .navMain {
+            background-color: #333; /* Темный фон для навигации */
+            padding: 10px; /* Внутренний отступ */
+        }
+
+        .navMain ul {
+            list-style-type: none; /* Убираем маркеры списка */
+            margin: 0;
+            padding: 0;
+            display: flex; /* Используем Flexbox для горизонтального расположения элементов */
+            justify-content: space-around; /* Равномерное распределение элементов */
+        }
+
+        .navMain li {
+            margin-right: 10px; /* Отступ между элементами списка */
+        }
+
+        .navMain a.nav-link {
+            color: white; /* Белый цвет текста */
+            text-decoration: none; /* Убираем подчеркивание ссылок */
+            font-weight: bold; /* Жирный шрифт */
+            transition: color 0.3s; /* Плавный переход при наведении */
+        }
+
+        .navMain a.nav-link:hover {
+            color: #ffcc00; /* Цвет при наведении */
+        }
+
+        /* Дополнительные стили для навигации */
+
+    </style>
 </head>
+<nav class="navMain"> <!-- Секция навигации -->
+    <ul>
+        <li><a href="/" class="nav-link">Главная</a></li> <!-- Ссылка на главную страницу -->
+        <li><a href="/products" class="nav-link">Продукты</a></li> <!-- Ссылка на список продуктов -->
+        <li><a href="/about" class="nav-link">О нас</a></li> <!-- Ссылка на страницу "О нас" -->
+        <li><a href="/contact" class="nav-link">Контакты</a></li> <!-- Ссылка на контакты -->
+    </ul>
+</nav>
 <body>
 <div class="error-container">
     <h1>Ошибка</h1>

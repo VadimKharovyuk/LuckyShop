@@ -2,7 +2,102 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Редактировать продукт</title>
+    <style>
+        /* Стили для навигации */
+        .navMain {
+            background-color: #333; /* Темный фон для навигации */
+            padding: 10px; /* Внутренний отступ */
+        }
+
+        .navMain ul {
+            list-style: none; /* Убираем маркеры списка */
+            margin: 0;
+            padding: 0;
+            display: flex; /* Используем Flexbox для горизонтального расположения элементов */
+            justify-content: space-around; /* Равномерное распределение элементов */
+        }
+
+        .navMain a.nav-link {
+            color: white; /* Белый цвет текста */
+            text-decoration: none; /* Убираем подчеркивание ссылок */
+            font-weight: bold; /* Жирный шрифт */
+            transition: color 0.3s; /* Плавный переход при наведении */
+        }
+
+        .navMain a.nav-link:hover {
+            color: #ffcc00; /* Цвет при наведении */
+        }
+
+        /* Стили для основной страницы */
+        h1 {
+            text-align: center; /* Центрирование заголовка */
+            font-size: 24px; /* Размер шрифта заголовка */
+        }
+
+        form {
+            max-width: 600px; /* Ограничение ширины */
+            margin: 20px auto; /* Центрирование и внешний отступ */
+            padding: 10px;
+            border: 1px solid #ddd; /* Граница для формы */
+            border-radius: 5px; /* Скругленные углы */
+            background-color: #f9f9f9; /* Светлый фон */
+        }
+
+        form div {
+            margin-bottom: 10px; /* Отступ между элементами формы */
+        }
+
+        form label {
+            font-weight: bold; /* Жирный шрифт для меток */
+        }
+
+        form input, form textarea {
+            width: 100%; /* Ширина полей ввода */
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px; /* Скругленные углы для полей ввода */
+        }
+
+        form button {
+            padding: 10px 20px;
+            background-color: #28a745; /* Зеленый фон для кнопки */
+            color: white; /* Белый цвет текста */
+            border: none;
+            border-radius: 5px; /* Скругленные углы для кнопки */
+            font-weight: bold;
+            cursor: pointer; /* Указатель при наведении */
+            transition: background-color 0.3s;
+        }
+
+        form button:hover {
+            background-color: #218838; /* Более темный зеленый при наведении */
+        }
+
+        .button {
+            padding: 10px 20px;
+            background-color: #dc3545; /* Красный цвет для кнопки отмены */
+            color: white;
+            text-decoration: none; /* Без подчеркивания */
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #c82333; /* Темно-красный при наведении */
+        }
+
+
+    </style>
 </head>
+<nav class="navMain"> <!-- Секция навигации -->
+    <ul>
+        <li><a href="/" class="nav-link">Главная</a></li> <!-- Ссылка на главную страницу -->
+        <li><a href="/products" class="nav-link">Продукты</a></li> <!-- Ссылка на список продуктов -->
+        <li><a href="/about" class="nav-link">О нас</a></li> <!-- Ссылка на страницу "О нас" -->
+        <li><a href="/contact" class="nav-link">Контакты</a></li> <!-- Ссылка на контакты -->
+    </ul>
+</nav>
 <body>
 
 <header>
