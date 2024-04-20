@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Ошибка</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css" /> <!-- Подключение стилей -->
+</head>
+<body>
+<div class="error-container">
+    <h1>Ошибка</h1>
+    <p th:text="${error}">Произошла ошибка. Пожалуйста, попробуйте снова.</p> <!-- Выводим сообщение об ошибке -->
+
+    <!-- Дополнительные опции -->
+    <a href="/products" class="button">Вернуться к списку продуктов</a> <!-- Ссылка на список продуктов -->
+    <a href="/" class="button">На главную страницу</a> <!-- Ссылка на главную страницу -->
+</div>
+</body>
+</html>

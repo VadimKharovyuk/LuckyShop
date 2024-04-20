@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Главная страница</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css" /> <!-- Подключение стилей -->
+    <style>
+        /* Общие стили */
+        body {
+            font-family: Arial, sans-serif; /* Выбор шрифта */
+            margin: 0; /* Убираем отступы */
+            padding: 0; /* Убираем заполнение */
+            background-color: #f5f5f5; /* Цвет фона */
+            min-height: 100vh; /* Минимальная высота для закрепления футера */
+            display: flex; /* Используем flex layout */
+            flex-direction: column; /* Выстраиваем элементы вертикально */
+        }
+
+        /* Стили для хедера */
+        header {
+            background-color: #333; /* Темный фон */
+            color: #fff; /* Белый текст */
+            padding: 10px; /* Внутренние отступы */
+            text-align: center; /* Центрирование текста */
+        }
+
+        /* Стили для навигации */
+        nav ul {
+            list-style-type: none; /* Без маркеров */
+            padding: 0; /* Убираем отступы */
+            margin: 0; /* Убираем заполнение */
+            display: flex; /* Флекс-контейнер */
+            justify-content: center; /* Центрирование элементов */
+        }
+
+        nav ul li {
+            margin: 0 15px; /* Отступы между элементами */
+        }
+
+        .nav-link {
+            text-decoration: none; /* Убираем подчеркивание */
+            color: #fff; /* Белый текст */
+        }
+
+        .nav-link:hover {
+            color: #ddd; /* Цвет при наведении */
+        }
+
+        /* Стили для основного контента */
+        main {
+            padding: 20px; /* Внутренние отступы */
+            text-align: center; /* Центрирование текста */
+            flex: 1; /* Позволяет основному контенту занимать оставшееся пространство */
+        }
+
+        /* Стили для кнопок */
+        .button {
+            display: inline-block; /* Инлайн-блок */
+            padding: 10px 20px; /* Внутренние отступы */
+            background-color: #333; /* Темный фон */
+            color: #fff; /* Белый текст */
+            text-decoration: none; /* Без подчеркивания */
+            border-radius: 5px; /* Закругленные углы */
+            transition: all 0.3s; /* Плавный переход */
+        }
+
+        .button:hover {
+            background-color: #555; /* Изменение фона при наведении */
+        }
+
+        /* Стили для боковой панели (aside) */
+        aside {
+            background-color: #f0f0f0; /* Светлый фон */
+            padding: 20px; /* Внутренние отступы */
+            text-align: left; /* Текст по левому краю */
+            border-left: 2px solid #ddd; /* Линия границы */
+        }
+
+        /* Стили для футера */
+        footer {
+            background-color: #3f51b5; /* Темно-синий фон */
+            color: #fff; /* Белый текст */
+            padding: 20px; /* Внутренние отступы */
+            text-align: center; /* Центрирование текста */
+            position: sticky; /* Закрепление футера */
+            bottom: 0; /* Футер всегда будет снизу */
+            width: 100%; /* Футер занимает всю ширину */
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3); /* Тень над футером */
+        }
+
+
+    </style>
+</head>
+<body>
+<header> <!-- Хедер с заголовком и навигацией -->
+    <h1>Добро пожаловать в Lucky Shop!</h1> <!-- Заголовок хедера -->
+    <nav> <!-- Секция навигации -->
+        <ul>
+            <li><a href="/" class="nav-link">Главная</a></li> <!-- Ссылка на главную страницу -->
+            <li><a href="/products" class="nav-link">Продукты</a></li> <!-- Ссылка на список продуктов -->
+            <li><a href="/about" class="nav-link">О нас</a></li> <!-- Ссылка на страницу "О нас" -->
+            <li><a href="/contact" class="nav-link">Контакты</a></li> <!-- Ссылка на контакты -->
+        </ul>
+    </nav>
+</header>
+
+<main> <!-- Основной контент -->
+    <h2>Ваши лучшие покупки здесь!</h2>
+    <p>Мы предлагаем широкий выбор товаров по доступным ценам. Проверьте наш каталог и начните покупки уже сегодня!</p>
+
+    <a href="/products" class="button">Просмотреть продукты</a> <!-- Ссылка на продукты -->
+</main>
+
+<aside> <!-- Боковая панель -->
+    <h3>Новости и предложения</h3>
+    <p>Не пропустите наши специальные предложения и последние новости о скидках!</p>
+
+    <a href="/offers" class="button">Специальные предложения</a> <!-- Ссылка на специальные предложения -->
+</aside>
+
+<footer> <!-- Футер -->
+    <p>&copy; 2024 Lucky Shop. Все права защищены.</p> <!-- Копирайт -->
+    <p>Свяжитесь с нами по адресу: support@luckyshop.com</p> <!-- Контактная информация -->
+</footer>
+</body>
+</html>

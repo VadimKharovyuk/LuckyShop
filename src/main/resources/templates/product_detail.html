@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Details</title>
+    <!-- Подключение файла стилей -->
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<h1>Product Details</h1>
+
+<!-- Отображение информации о продукте -->
+<div>
+    <label>Product ID:</label>
+    <span th:text="${product.id}"></span>
+</div>
+
+<div>
+    <label>Product Name:</label>
+    <span th:text="${product.name}"></span>
+</div>
+
+<div>
+    <label>Description:</label>
+    <span th:text="${product.description}"></span>
+</div>
+
+<div>
+    <label>Price:</label>
+    <span th:text="${product.price}"></span>
+</div>
+
+<!-- Ссылки для редактирования и возвращения к списку -->
+<div>
+    <a th:href="@{/products/edit/{id}(id=${product.id})}">Edit Product</a>
+    <a th:href="@{/products}">Back to Product List</a>
+</div>
+</body>
+</html>
