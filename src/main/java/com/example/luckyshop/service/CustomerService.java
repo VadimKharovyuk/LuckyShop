@@ -39,21 +39,46 @@ public class CustomerService {
         customerRepository.deleteById(id); // Удаляет клиента
     }
 
-    // Обновить данные клиента
     public Optional<Customer> updateCustomer(Long id, Customer updatedCustomer) {
-        if (id == null || updatedCustomer == null) {
-            throw new IllegalArgumentException("Invalid input"); // Проверка входных данных
+        if (id == null) {
+            throw new IllegalArgumentException("ID не может быть null"); // Проверка входных данных
         }
 
-        Optional<Customer> existingCustomer = customerRepository.findById(id);
-        if (existingCustomer.isPresent()) {
-            Customer customer = existingCustomer.get();
-            customer.setFirstName(updatedCustomer.getFirstName());
-            customer.setLastName(updatedCustomer.getLastName());
-            customer.setEmail(updatedCustomer.getEmail());
-            customerRepository.save(customer); // Сохраняет обновленного клиента
-            return Optional.of(customer);
+        if (updatedCustomer == null) {
+            throw new IllegalArgumentException("Обновленные данные клиента не могут быть null"); // Проверка входных данных
         }
+
+        Optional<Customer> existingCustomerOpt = customerRepository.findById(id);
+        if (existingCustomerOpt.isPresent()) {
+            Customer existingCustomer = existingCustomerOpt.get();
+
+            // Обновление данных только при наличии изменений
+            if (updatedCustomer.getFirstName() != null &&
+                    !updatedCustomer.getFirstName().equals(existingCustomer.getFirstName())) {
+                existingCustomer.setFirstName(updatedCustomer.getFirstName());
+            }
+
+            if (updatedCustomer.getLastName() != null &&
+                    !updatedCustomer.getLastName().equals(existingCustomer.getLastName())) {
+                existingCustomer.setLastName(updatedCustomer.getLastName());
+            }
+
+            if (updatedCustomer.getEmail() != null &&
+                    !updatedCustomer.getEmail().equals(existingCustomer.getEmail())) {
+                existingCustomer.setEmail(updatedCustomer.getEmail());
+            }
+
+            // Сохранение обновленных данных
+            customerRepository.save(existingCustomer);
+
+            return Optional.of(existingCustomer); // Возвращаем обновленного клиента
+        }
+
         return Optional.empty(); // Если клиента с таким ID нет
     }
+
+    // Обновление данных клиента
+  
+
+
 }
